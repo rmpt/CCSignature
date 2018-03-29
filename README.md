@@ -11,9 +11,11 @@ O método Sign pressupõe a seleccção de um dos certificatos devolvidos pelo m
 
 **Exemplo:**
 
+Utilizando a DLL da última release, podemos assinar a string da seguinte forma:
+
     var certificateManager = new CertificateManager();
     var availableCertificates = certificateManager.GetStoreCertificates();
-    var selectedCertificate = availableCertificates[0];
+    var selectedCertificate = availableCertificates[0]; // deve ser seleccionado de alguma forma
     var docToSign = "My document to sign";
     
     var base64Signature = certificateManager.Sign(selectedCertificate.Id, docToSign);
